@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 1779733915134592660}
   - component: {fileID: 1868909973359026570}
   - component: {fileID: 7113334445641048891}
+  - component: {fileID: 6282520674497054585}
   m_Layer: 0
   m_Name: Cyber_Monsters_2
   m_TagString: Untagged
@@ -485,6 +486,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
+--- !u!65 &6282520674497054585
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1781198495244219288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1781210596302022268
 GameObject:
   m_ObjectHideFlags: 0
