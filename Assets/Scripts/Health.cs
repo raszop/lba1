@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
         }
     }
 
-    private bool IsAlive()
+    public bool IsAlive()
     {
         return hp > 0;
     }
