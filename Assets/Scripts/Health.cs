@@ -22,6 +22,7 @@ public class Health : MonoBehaviour
         if(collision.gameObject.tag == "PlayerBullet")
         {
             Hp -= 1;
+            Destroy(collision.gameObject);
         }
     }
 
