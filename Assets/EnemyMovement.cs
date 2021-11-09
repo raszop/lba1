@@ -24,6 +24,7 @@ public class EnemyMovement : MonoBehaviour
         {
             yield return new WaitForSeconds(1.0F);
 
+            //gameObject.transform.position = player.transform.position;
             agent.SetDestination(player.transform.position);
 
         } while (health.IsAlive());
