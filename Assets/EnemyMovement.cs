@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
 
     private GameObject player;
 
+    [SerializeField]
     private bool canMove;
 
     private void Start()
