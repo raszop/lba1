@@ -10,20 +10,11 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private Health health;
 
-    private GameObject player;
-
-    [SerializeField]
-    private bool canMove;
+    public GameObject target;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine(ChasePlayerRoutine());
-    }
-
-    public void ToggleMovement()
-    {
-        canMove = !canMove;
     }
 
     private IEnumerator ChasePlayerRoutine()
@@ -32,15 +23,8 @@ public class EnemyMovement : MonoBehaviour
         {
             yield return new WaitForSeconds(1.0F);
 
-            if (canMove)
-            {
-                agent.SetDestination(player.transform.position);
-            }
-            else
-            {
-                agent.SetDestination(transform.position);
-            }
             //gameObject.transform.position = player.transform.position;
+            agent.SetDestination(target.transform.position);
 
         } while (health.IsAlive());
     }
