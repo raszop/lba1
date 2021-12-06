@@ -14,6 +14,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Start()
     {
+        if(target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Player");
+        }
+
         StartCoroutine(ChasePlayerRoutine());
     }
 
