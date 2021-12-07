@@ -21,4 +21,12 @@ public class HealthBar : MonoBehaviour
     {
         bar.fillAmount = hp / maxHp;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "PlayerBullet")
+        {
+            hp = hp - 1;
+        }
+    }
 }
