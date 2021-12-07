@@ -24,9 +24,14 @@ public class HealthBar : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "PlayerBullet")
+        if (collision.gameObject.tag == "PlayerBullet")
         {
             hp = hp - 1;
+
+            if (hp <= 0)
+            {                
+                Destroy(gameObject);
+            }
         }
     }
 }
