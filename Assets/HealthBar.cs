@@ -13,7 +13,8 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        maxHp = 100;
+        hp = Random.Range(5, maxHp);
     }
 
     // Update is called once per frame
@@ -24,12 +25,30 @@ public class HealthBar : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.tag == "kolce")
+        {
+            hp -= 1;
+        }
+
         if (collision.gameObject.tag == "PlayerBullet")
         {
             hp = hp - 1;
 
             if (hp <= 0)
             {                
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "PlayerBullet")
+        {
+            hp = hp - 1;
+
+            if (hp <= 0)
+            {
                 Destroy(gameObject);
             }
         }
