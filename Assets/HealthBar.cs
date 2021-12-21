@@ -13,8 +13,8 @@ public class HealthBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHp = 100;
-        hp = Random.Range(5, maxHp);
+        //maxHp = 100;
+        //hp = Random.Range(5, maxHp);
     }
 
     // Update is called once per frame
@@ -32,7 +32,8 @@ public class HealthBar : MonoBehaviour
 
         if (collision.gameObject.tag == "PlayerBullet")
         {
-            hp = hp - 1;
+            float damage = collision.gameObject.GetComponent<Bullet>().damage;
+            hp -= damage;
 
             if (hp <= 0)
             {                
