@@ -32,6 +32,13 @@ public class Spawner : MonoBehaviour
             enemy = objectToSpawn[liczba];
 
             Instantiate(enemy, spawnPosition, Quaternion.identity);
+            
+            GameObject newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+            newEnemy.GetComponent<HealthBar>().hp = 100;
+            newEnemy.GetComponent<HealthBar>().maxHp = 100;
+            
+            
+            
         }
     }
 
@@ -64,7 +71,7 @@ public class Spawner : MonoBehaviour
 
             enemy = objectToSpawn[liczba];
 
-            Instantiate(enemy, spawnPosition, Quaternion.identity);
+            
         }
     }
 }
