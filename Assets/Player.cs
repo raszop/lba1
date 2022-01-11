@@ -35,4 +35,12 @@ public class Player : MonoBehaviour
             //TODO
         }
     }
+
+    private void Update()
+    {
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            GetDamage(1);
+        }
+    }
 }
