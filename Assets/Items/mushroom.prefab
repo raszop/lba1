@@ -285,4 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  healHpValue: 3
+  healHpValue: 0
+  additionalHealth: 0
+  additionalDamage: 2
+  additionalShootingRate: 2
