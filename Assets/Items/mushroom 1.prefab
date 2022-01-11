@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 499a8602dff8c49958bcfa1a8be6107f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf86cfd9a1116044786f2aa6667d0cfb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 8074154340512368048}
   - component: {fileID: 8074154340512368055}
   m_Layer: 0
-  m_Name: HealingFoxTail
+  m_Name: mushroom 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: 
-  healHpValue: 3
-  additionalHealth: 3
-  additionalDamage: 0
-  additionalShootingRate: 0
+  healHpValue: 0
+  additionalHealth: 0
+  additionalDamage: 2
+  additionalShootingRate: 2
