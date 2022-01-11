@@ -17,6 +17,7 @@ public class Item : MonoBehaviour
         if(other.CompareTag("Player"))
         {
             other.GetComponent<Player>().Heal(healHpValue);
+            other.GetComponent<Player>().maxHp += additionalHealth;
 
             Destroy(this.gameObject);
         }
