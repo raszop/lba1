@@ -8,6 +8,10 @@ public class Item : MonoBehaviour
 
     public int healHpValue;
 
+    public int additionalHealth;
+    public int additionalDamage;
+    public int additionalShootingRate;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player"))
