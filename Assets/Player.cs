@@ -34,8 +34,10 @@ public class Player : MonoBehaviour
         if(hp <= 0)
         {
             //TODO
-            //SceneManager.LoadScene("tests");
             gameObject.SetActive(false);
+
+            //reload scene
+            SceneManager.LoadScene("tests");
         }
     }
 
