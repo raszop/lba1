@@ -10,6 +10,8 @@ public class HealthBar : MonoBehaviour
     public float hp;
     public float maxHp;
 
+    public int damage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,10 @@ public class HealthBar : MonoBehaviour
             {                
                 Destroy(gameObject);
             }
+        }
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<Player>().GetDamage(damage);
         }
     }
 
