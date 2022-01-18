@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Trap : MonoBehaviour
 {
-    //dodać zmienną na kolce typ GameObject
+    public GameObject kolce;
 
     public int damage;
 
@@ -19,12 +19,11 @@ public class Trap : MonoBehaviour
         {
             collision.gameObject.GetComponent<Player>().GetDamage(damage);
         }
-
-        //włączyć kolce .SetActive(true)
+        kolce.SetActive(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        //wyłączyć kolce .SetActive(false)
+        kolce.SetActive(false);
     }
 }
