@@ -22,11 +22,11 @@ public class Enemy_Script : MonoBehaviour
         {
             if (Clockwise == true)
             {
-                gameObject.transform.Rotate(0, 0, Rotation_Speed);
+                gameObject.transform.Rotate(0, 0, Rotation_Speed*Time.deltaTime);
             }
             else
             {
-                gameObject.transform.Rotate(0, 0, -Rotation_Speed);
+                gameObject.transform.Rotate(0, 0, -Rotation_Speed*Time.deltaTime);
             }
         }
     }
