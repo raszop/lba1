@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SpawnRoutine());
+        //StartCoroutine(SpawnRoutine());
         //Spawn();
     }
 
@@ -36,6 +36,16 @@ public class Spawner : MonoBehaviour
             newEnemy.GetComponent<HealthBar>().hp = 10;
             newEnemy.GetComponent<HealthBar>().maxHp = 10;
         }
+    }
+
+    public void SpawnRandomEnemy()
+    {
+        GameObject enemy;
+        int liczba = Random.Range(0, objectToSpawn.Count);
+
+        enemy = objectToSpawn[liczba];
+
+        GameObject newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
     }
 
     public void Spawn()
