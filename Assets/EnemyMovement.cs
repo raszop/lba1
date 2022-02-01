@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField]
     private NavMeshAgent agent;
     [SerializeField]
-    private Health health;
+    private HealthBar health;
 
     public GameObject target;
 
@@ -17,20 +17,14 @@ public class EnemyMovement : MonoBehaviour
         if(target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player");
-        }
-
-        StartCoroutine(ChasePlayerRoutine());
+        }        
     }
 
-    private IEnumerator ChasePlayerRoutine()
+    private void Update()
     {
-        do
+        if(health.hp > 0)
         {
-            yield return new WaitForSeconds(1.0F);
-
-            //gameObject.transform.position = player.transform.position;
             agent.SetDestination(target.transform.position);
-
-        } while (health.IsAlive());
+        }
     }
 }

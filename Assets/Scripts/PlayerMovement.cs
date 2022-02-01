@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, Vector3.zero, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, new Vector3(999,999,999), Quaternion.identity);
         bullet.transform.position = this.transform.position;
         bullet.transform.rotation = this.transform.rotation;
         //bullet.transform.Rotate(0, RandomSpread(), 0, Space.World); //disabled
