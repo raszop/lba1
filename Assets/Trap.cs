@@ -10,7 +10,7 @@ public class Trap : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Enenmy")
+        if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<HealthBar>().hp -= damage;       
         }
