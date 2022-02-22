@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour
 {
     public Image playerHealthBar;
+    public Image playerHealthBarHeart;
 
     public float hp;
     public float maxHp;
@@ -20,16 +21,14 @@ public class Player : MonoBehaviour
             hp = maxHp;
         }
 
-        //update player's health bar on screen
-        playerHealthBar.fillAmount = hp / maxHp;
+        UpdateHealthBar();
     }
 
     public void GetDamage(int damageValue)
     {
         hp = hp - damageValue;
 
-        //update player's health bar on screen
-        playerHealthBar.fillAmount = hp / maxHp;
+        UpdateHealthBar();
 
         if(hp <= 0)
         {
@@ -39,6 +38,14 @@ public class Player : MonoBehaviour
             //reload scene
             SceneManager.LoadScene("tests");
         }
+    }
+
+    private void UpdateHealthBar()
+    {
+        //update player's health bar on screen
+        float newFillValue = hp / maxHp;
+        playerHealthBar.fillAmount = newFillValue;
+        playerHealthBarHeart.color = new Color(newFillValue, newFillValue, newFillValue);
     }
 
     private void Update()
