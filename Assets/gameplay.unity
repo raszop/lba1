@@ -3255,6 +3255,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1073498347}
     - target: {fileID: 1199195269467645895, guid: 44091d64070f7419381b3575b10dcc9c, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1199195269467645895, guid: 44091d64070f7419381b3575b10dcc9c, type: 3}
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
@@ -3308,24 +3312,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44091d64070f7419381b3575b10dcc9c, type: 3}
---- !u!1 &1466473547 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3755425965401815556, guid: 6e1da4076ae6e4c98bcd691328acb7a5, type: 3}
-  m_PrefabInstance: {fileID: 1757378332}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1466473552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1466473547}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08681697697024a8398dce7334e85d15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotation: {x: 0, y: 0, z: 0}
 --- !u!1001 &1485762839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3610,6 +3596,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1466473552, guid: 6e1da4076ae6e4c98bcd691328acb7a5, type: 3}
+      propertyPath: rotation.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 3755425964767750082, guid: 6e1da4076ae6e4c98bcd691328acb7a5, type: 3}
       propertyPath: m_RootOrder
       value: 1
