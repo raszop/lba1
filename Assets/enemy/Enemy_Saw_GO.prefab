@@ -1,5 +1,65 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!64 &5677624444485734581
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4759056345859515968}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3581223177187072065, guid: 9b957fafbd9b360448ba8ea2ff4d8cad, type: 3}
+--- !u!114 &5677624444485734577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4759056345859515968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702aa9858cf68478096c72d97446308f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 5677624444814736125}
+  hp: 50
+  maxHp: 50
+  damage: 5
+--- !u!114 &5677624444485734582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4759056345859515968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad06a9c1a0c584d8dace53743381c891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 5677624443437178600}
+  health: {fileID: 5677624444485734577}
+  target: {fileID: 0}
+--- !u!114 &5677624444485734583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4759056345859515968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6232243d7a1a54cae7a9f83c683efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Can_Rotate: 1
+  Clockwise: 1
+  Rotation_Speed: -250
 --- !u!1 &5677624443437178601
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,7 +86,7 @@ Transform:
   m_GameObject: {fileID: 5677624443437178601}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.898809, y: 0.97599363, z: 21.836554}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 5278289289522068730}
   m_Father: {fileID: 0}
@@ -244,66 +304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: {x: 90, y: 0, z: 0}
---- !u!64 &5677624444485734581
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4759056345859515968}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -3581223177187072065, guid: 9b957fafbd9b360448ba8ea2ff4d8cad, type: 3}
---- !u!114 &5677624444485734583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4759056345859515968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df6232243d7a1a54cae7a9f83c683efb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Can_Rotate: 1
-  Clockwise: 0
-  Rotation_Speed: 500
---- !u!114 &5677624444485734582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4759056345859515968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad06a9c1a0c584d8dace53743381c891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 5677624443437178600}
-  health: {fileID: 5677624444485734577}
-  target: {fileID: 0}
---- !u!114 &5677624444485734577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4759056345859515968}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 702aa9858cf68478096c72d97446308f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bar: {fileID: 5677624444814736125}
-  hp: 50
-  maxHp: 50
-  damage: 5
 --- !u!1 &5677624444814736127
 GameObject:
   m_ObjectHideFlags: 0
