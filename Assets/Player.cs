@@ -50,9 +50,9 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            GetDamage(1);
-        }
+        //if(Input.GetKeyUp(KeyCode.Space))
+        //{
+        //    GetDamage(1);
+        //}
     }
 }
