@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Rigidbody rb;
 
+    public Animator animator;
+
     private float lastShot = 0f;
     
 
@@ -85,10 +87,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementVector != Vector3.zero)
         {
+            //Debug.Log("now in moving!")
+            animator.SetBool("Isrunning", true);
             rb.velocity = movementVector * movementSpeed;
         }
         else
         {
+            //Debug.Log("now i don't move!")
+            animator.SetBool("Isrunning", false);
             rb.velocity = Vector3.zero;
         }
     }

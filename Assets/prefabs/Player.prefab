@@ -148,6 +148,7 @@ MonoBehaviour:
   bulletSpeed: 1000
   bulletPrefab: {fileID: 4148852074402691904, guid: 91928c57a1619400bb5e825c3a1b6400, type: 3}
   rb: {fileID: 1199195269467645895}
+  animator: {fileID: 7360509905547918865}
 --- !u!54 &1199195269467645895
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -248,10 +249,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1557394941662032138, guid: a9f3a8613f5cf3b4a92822259a39266a, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 6dd79721d544445549342f857b74b784, type: 3}
+    - target: {fileID: 1557394941662032138, guid: a9f3a8613f5cf3b4a92822259a39266a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a95771afe8731484583b26335c51ac91, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9f3a8613f5cf3b4a92822259a39266a, type: 3}
 --- !u!4 &7360509905540452765 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1557394941655096966, guid: a9f3a8613f5cf3b4a92822259a39266a, type: 3}
+  m_PrefabInstance: {fileID: 8338751918111985435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7360509905547918865 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1557394941662032138, guid: a9f3a8613f5cf3b4a92822259a39266a, type: 3}
   m_PrefabInstance: {fileID: 8338751918111985435}
   m_PrefabAsset: {fileID: 0}
