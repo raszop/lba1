@@ -33,9 +33,9 @@ public class PlayerMovement : MonoBehaviour
         HandleShootingInput();
 
         HandleActualMovement();
-        HandleActualShooting();
-
         HandlePlayerModelRotation();
+
+        HandleActualShooting();
     }
 
     public virtual void HandlePlayerModelRotation()
