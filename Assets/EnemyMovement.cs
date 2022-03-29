@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     private HealthBar health;
+    [SerializeField]
+    private Rigidbody rb;
 
     public GameObject target;
 
@@ -17,13 +19,20 @@ public class EnemyMovement : MonoBehaviour
         if(target == null)
         {
             target = GameObject.FindGameObjectWithTag("Player");
-        }        
+        }
+
+        if(rb == null)
+        {
+            rb = GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+        }
     }
 
     private void Update()
     {
         if(health.hp > 0)
         {
+            rb.velocity = Vector3.zero;
             agent.SetDestination(target.transform.position);
         }
     }
