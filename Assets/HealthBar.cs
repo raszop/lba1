@@ -21,6 +21,10 @@ public class HealthBar : MonoBehaviour
     void Update()
     {
         bar.fillAmount = hp / maxHp;
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -48,10 +52,7 @@ public class HealthBar : MonoBehaviour
         {
             hp = hp - 1;
 
-            if (hp <= 0)
-            {
-                Destroy(gameObject);
-            }
+            
         }
     }
 }

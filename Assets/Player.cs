@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
             gameObject.SetActive(false);
 
             //reload scene
-            SceneManager.LoadScene("tests");
+            SceneManager.LoadScene("Game_Over");
         }
     }
 
