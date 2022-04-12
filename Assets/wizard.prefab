@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 863706013}
   - component: {fileID: 863706014}
   - component: {fileID: 2317076679359402024}
+  - component: {fileID: 8125656765333490654}
   m_Layer: 0
   m_Name: wizard
   m_TagString: Enemy
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3755425964767750087}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad06a9c1a0c584d8dace53743381c891, type: 3}
   m_Name: 
@@ -187,6 +188,21 @@ MonoBehaviour:
   damage: 0
   attackDelay: 1
   canAttackPlayer: 0
+--- !u!114 &8125656765333490654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3755425964767750087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4400b250da443399015c3628297a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 6239355304673067368, guid: c0ff3cd650bb24a74b1fba07f3d8fbf2, type: 3}
+  bulletSpeed: 100
+  attackDelay: 5
 --- !u!1001 &2028015282892261422
 PrefabInstance:
   m_ObjectHideFlags: 0
