@@ -2328,6 +2328,7 @@ GameObject:
   - component: {fileID: 8718401852763897238}
   - component: {fileID: 3758680062927387791}
   - component: {fileID: 9137725801098279089}
+  - component: {fileID: 59317696706339633}
   m_Layer: 0
   m_Name: dragon
   m_TagString: Untagged
@@ -2470,6 +2471,21 @@ MonoBehaviour:
   damage: 5
   attackDelay: 2
   canAttackPlayer: 0
+--- !u!114 &59317696706339633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188024269815001318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4400b250da443399015c3628297a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 6239355304673067368, guid: c0ff3cd650bb24a74b1fba07f3d8fbf2, type: 3}
+  bulletSpeed: 100
+  attackDelay: 3
 --- !u!1 &188024269815001326
 GameObject:
   m_ObjectHideFlags: 0
