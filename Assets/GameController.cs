@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     public float baseSpawnTime;
     public float minimumSpawnTime;
 
+    private float waveEndCheckTime = 2.0f;
+
     public void StartWave()
     {
         StartCoroutine(WaveRoutine());
@@ -39,5 +41,21 @@ public class GameController : MonoBehaviour
         }
 
         wave = wave + 1;
+        StartCoroutine(CheckIfWaveEndedRoutine());
+    }
+
+    private IEnumerator CheckIfWaveEndedRoutine()
+    {
+        GameObject[] enemies;
+        do
+        {
+            yield return new WaitForSeconds(waveEndCheckTime);
+            enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        } while (enemies.Length > 0);
+
+        if (enemies.Length == 0)
+        {
+            Debug.Log("Wave ended");
+        }
     }
 }
