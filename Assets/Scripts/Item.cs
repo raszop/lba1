@@ -12,7 +12,7 @@ public class Item : MonoBehaviour
 
     public int additionalHealth;
     public int additionalDamage;
-    public int additionalShootingRate;
+    public float additionalShootingRate;
 
     private void OnTriggerEnter(Collider other)
     {
