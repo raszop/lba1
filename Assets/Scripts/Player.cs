@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public Image playerHealthBar;
     public Image playerHealthBarHeart;
 
+    public int money;
     public float hp;
     public float maxHp;
 
