@@ -4,83 +4,49 @@ using UnityEngine;
 
 public class spawnspikes : MonoBehaviour
 {
-
-    //public GameObject objectToSpawn;
-    public List<GameObject> objectToSpawn;
+    public GameObject objectToSpawn;
 
     public Vector3 spawnPosition;
+
+    public float spawnTime;
+
+    public float spawnDistanceMax;
+    public float spawnDistanceMin;
 
     private void Start()
     {
         //StartCoroutine(SpawnRoutine());
-        //Spawn();
+        SpawnSpikes();
     }
 
-    private IEnumerator SpawnRoutine()
+    [ContextMenu("test spawn trap")]
+    public void SpawnSpikes()
     {
-        for (int licznik = 0; licznik < 10; licznik++)
+        GameObject newTrap = Instantiate(objectToSpawn, transform.position, Quaternion.identity);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 playerPosition = player.transform.position;
+
+        float distanceToPlayer = 0;
+        Vector3 finalPosition = new Vector3();
+        do
         {
-            yield return new WaitForSeconds(2f);
+            Vector3 insideSpherePosition = playerPosition + Random.insideUnitSphere * spawnDistanceMax;
 
-            float x = Random.Range(0f, 20f);
-            float z = Random.Range(0f, 20f);
+            finalPosition = new Vector3();
+            finalPosition.x = insideSpherePosition.x;
+            finalPosition.y = playerPosition.y;
+            finalPosition.z = insideSpherePosition.z;
 
-            spawnPosition = new Vector3(x, 2, z);
+            distanceToPlayer = Vector3.Distance(playerPosition, finalPosition);
 
-            GameObject trap;
-            int liczba = Random.Range(0, 2);
+        } while (distanceToPlayer < spawnDistanceMin);
 
-            trap = objectToSpawn[liczba];
-            
-            GameObject newEnemy = Instantiate(trap, spawnPosition, Quaternion.identity);
+        newTrap.transform.position = finalPosition;
 
-           
-        }
+
+
+        Invoke("SpawnSpikes", spawnTime);
     }
-
-    public void SpawnRandomEnemy()
-    {
-        GameObject enemy;
-        int liczba = Random.Range(0, objectToSpawn.Count);
-
-        enemy = objectToSpawn[liczba];
-
-        GameObject newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
-    }
-    public void Spawn()
-    {
-        //int licznik = 0;
-
-        //do
-        //{
-        //licznik += 1;
-
-        //float x = Random.Range(0f, 20f);
-        //float z = Random.Range(0f, 20f);
-
-        //spawnPosition = new Vector3(x, 2, z);
-
-        //Instantiate(objectToSpawn, spawnPosition, Quaternion.identity);
-
-        //} while (licznik < 10);
-
-        for (int licznik = 0; licznik < 10; licznik++)
-        {
-            float x = Random.Range(0f, 20f);
-            float z = Random.Range(0f, 20f);
-
-            spawnPosition = new Vector3(x, 2, z);
-
-            GameObject enemy;
-            int liczba = Random.Range(0, 2);
-
-            enemy = objectToSpawn[liczba];
-
-
-        }
-    }
-
-
 
 
 
