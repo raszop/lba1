@@ -517,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kolce: {fileID: 7966939388101275782}
   damage: 2
+  destroyTime: 10
 --- !u!1 &5799155174227284985
 GameObject:
   m_ObjectHideFlags: 0
