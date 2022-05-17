@@ -13,6 +13,9 @@ public class Player : MonoBehaviour
     public float hp;
     public float maxHp;
 
+    public int damage;
+    public float shootingRate;
+
     public void Heal(int healValue)
     {
         hp = hp + healValue;

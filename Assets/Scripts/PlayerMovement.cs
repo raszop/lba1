@@ -7,8 +7,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float movementSpeed;
     [SerializeField]
-    private float shootingRate;
-    [SerializeField]
     private float bulletSpeed;
     [SerializeField]
     private GameObject bulletPrefab;
@@ -27,6 +25,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 horizontalShooting;
     private Vector3 verticalShooting;
     private Vector3 shootingVector;
+
+    private Player player;
+
+    private void Start()
+    {
+        player = GetComponent<Player>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -65,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Time.time > lastShot)
         {
-            lastShot = Time.time + shootingRate;
+            lastShot = Time.time + player.shootingRate;
             Shoot();
             //lastShot = Time.time + currentGun.ShootingRate;
             //currentGun.TryShooting();
@@ -81,6 +86,7 @@ public class PlayerMovement : MonoBehaviour
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         bulletRb.velocity = Vector3.zero;
         bulletRb.AddForce(bullet.transform.TransformDirection(Vector3.forward) * bulletSpeed);
+        bullet.GetComponent<Bullet>().damage = player.damage;
     }
 
     private void HandleActualMovement()

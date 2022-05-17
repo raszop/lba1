@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     public List<GameObject> spawners;
+    public List<GameObject> itemSpawnPlaces;
+    public List<GameObject> itemsToSpawn;
+    public List<GameObject> spawnedItems;
 
     public int wave = 1;
 
@@ -16,6 +19,10 @@ public class GameController : MonoBehaviour
 
     private float waveEndCheckTime = 2.0f;
 
+    private void Start()
+    {
+        spawnedItems = new List<GameObject>();
+    }
     public void StartWave()
     {
         StartCoroutine(WaveRoutine());
@@ -23,6 +30,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator WaveRoutine()
     {
+        DespawnItemsToBuy();
         int enemiesToSpawn = wave * baseEnemyMultiplier;
         float timeBetweenSpawns = baseSpawnTime - ((float)wave * spawningDelayMultiplier);
 
@@ -56,6 +64,28 @@ public class GameController : MonoBehaviour
         if (enemies.Length == 0)
         {
             Debug.Log("Wave ended");
+            SpawnItemsToBuy();
         }
+    }
+
+    [ContextMenu("spawn items")]
+    private void SpawnItemsToBuy()
+    {
+        foreach(GameObject place in itemSpawnPlaces)
+        {
+            GameObject newItem = Instantiate(itemsToSpawn[Random.Range(0, itemsToSpawn.Count)], place.transform.position, Quaternion.identity);
+            spawnedItems.Add(newItem);
+        }
+    }
+
+    [ContextMenu("despawn items")]
+    private void DespawnItemsToBuy()
+    {
+        foreach(GameObject item in spawnedItems)
+        {
+            DestroyImmediate(item);
+        }
+
+        spawnedItems = new List<GameObject>();
     }
 }

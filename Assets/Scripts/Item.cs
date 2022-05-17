@@ -6,6 +6,8 @@ public class Item : MonoBehaviour
 {
     public string itemName;
 
+    public int itemCost;
+
     public int healHpValue;
 
     public int additionalHealth;
@@ -16,10 +18,17 @@ public class Item : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            other.GetComponent<Player>().Heal(healHpValue);
-            other.GetComponent<Player>().maxHp += additionalHealth;
+            if (other.gameObject.GetComponent<Player>().money >= itemCost)
+            {
+                Player player = other.GetComponent<Player>();
 
-            Destroy(this.gameObject);
+                player.Heal(healHpValue);
+                player.maxHp += additionalHealth;
+                player.damage += additionalDamage;
+                player.shootingRate += additionalShootingRate;
+
+                Destroy(this.gameObject);
+            }
         }
     }
 }

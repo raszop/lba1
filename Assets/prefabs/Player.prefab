@@ -144,7 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  shootingRate: 1
   bulletSpeed: 1000
   bulletPrefab: {fileID: 4148852074402691904, guid: 91928c57a1619400bb5e825c3a1b6400, type: 3}
   rb: {fileID: 1199195269467645895}
@@ -179,8 +178,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthBar: {fileID: 0}
   playerHealthBarHeart: {fileID: 0}
+  money: 0
   hp: 10
   maxHp: 10
+  damage: 1
+  shootingRate: 1
 --- !u!65 &1199195269467645893
 BoxCollider:
   m_ObjectHideFlags: 0
