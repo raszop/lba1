@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd0ebbf6aad4f407c91cda6c578c0f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 1
   attackDelay: 1
   canAttackPlayer: 0
 --- !u!114 &2073956605488054618
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootMaxMoney: 3
-  chanceToDrop: 100
+  chanceToDrop: 50
   lootObject: {fileID: 8244904778834050155, guid: 2b372e3d972d4af46ac69ed579556fc9, type: 3}
 --- !u!1001 &2028015282892261422
 PrefabInstance:

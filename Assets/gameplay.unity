@@ -867,9 +867,13 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3042656700337512494, guid: dbfda977e35cd437f9ca8ab83df02186, type: 3}
-      propertyPath: objectToSpawn.Array.data[1]
+      propertyPath: objectToSpawn.Array.data[0]
       value: 
       objectReference: {fileID: 3755425964767750087, guid: a6702a9e0fc1fdb488d3b97fb3cdab70, type: 3}
+    - target: {fileID: 3042656700337512494, guid: dbfda977e35cd437f9ca8ab83df02186, type: 3}
+      propertyPath: objectToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 3755425964767750087, guid: 6e1da4076ae6e4c98bcd691328acb7a5, type: 3}
     - target: {fileID: 3042656700337512494, guid: dbfda977e35cd437f9ca8ab83df02186, type: 3}
       propertyPath: objectToSpawn.Array.data[2]
       value: 
@@ -1154,6 +1158,10 @@ PrefabInstance:
       propertyPath: objectToSpawn.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3042656700337512494, guid: dbfda977e35cd437f9ca8ab83df02186, type: 3}
+      propertyPath: objectToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 3755425964767750087, guid: 6e1da4076ae6e4c98bcd691328acb7a5, type: 3}
     - target: {fileID: 3042656700337512494, guid: dbfda977e35cd437f9ca8ab83df02186, type: 3}
       propertyPath: objectToSpawn.Array.data[1]
       value: 
@@ -2084,7 +2092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0a68c232880c45f3a47918bde6c4d46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startWaveButton: {fileID: 0}
+  startWaveButton: {fileID: 910766791}
   spawners:
   - {fileID: 627495751}
   - {fileID: 756656617}
