@@ -2103,10 +2103,14 @@ MonoBehaviour:
   - {fileID: 34506642}
   - {fileID: 1217109624}
   itemsToSpawn:
-  - {fileID: 910766791}
+  - {fileID: 8074154340512368054, guid: fe1f479e4f3d2d0408d7e1951d101a53, type: 3}
   - {fileID: 8074154340512368054, guid: f66c19c934f8fd142a29f2681799256f, type: 3}
+  - {fileID: 8074154340512368054, guid: aa35f43c7339d1a40bdf3bf50fd2920a, type: 3}
   - {fileID: 8074154340512368054, guid: ec94425b5a9c249518c3025691959fac, type: 3}
   - {fileID: 8074154340512368054, guid: c54677a6adac21e46a54ec96f17746ec, type: 3}
+  - {fileID: 8074154340512368054, guid: bff9b8f103badef4eb74c3eaad4eb98a, type: 3}
+  - {fileID: 8074154340512368054, guid: d72981cf37c7550469c9b6b119c0d5b4, type: 3}
+  - {fileID: 8074154340512368054, guid: f59d34fcad129fb4db3329dda266956f, type: 3}
   spawnedItems: []
   wave: 1
   spawningDelayMultiplier: 0.1
