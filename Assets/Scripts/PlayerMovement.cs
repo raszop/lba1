@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
+    private Joystick movementJoystick;
+    [SerializeField]
+    private Joystick shootingJoystick;
+
+    [SerializeField]
     private float movementSpeed;
     [SerializeField]
     private float bulletSpeed;
@@ -16,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     private float lastShot = 0f;
-    
+
 
     private Vector3 horizontalMovement;
     private Vector3 verticalMovement;
@@ -36,13 +41,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleMovementInput();
-        HandleShootingInput();
+        HandleVirtualJoysticks();
+
+        //HandleMovementInput();
+        //HandleShootingInput();
 
         HandleActualMovement();
         HandlePlayerModelRotation();
 
         HandleActualShooting();
+    }
+
+    public virtual void HandleVirtualJoysticks()
+    {
+        movementVector = new Vector3(movementJoystick.InputDirection.x, 0, movementJoystick.InputDirection.y).normalized;
+        shootingVector = new Vector3(shootingJoystick.InputDirection.x, 0, shootingJoystick.InputDirection.y);
     }
 
     public virtual void HandlePlayerModelRotation()
@@ -79,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, new Vector3(999,999,999), Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPrefab, new Vector3(999, 999, 999), Quaternion.identity);
         bullet.transform.position = this.transform.position;
         bullet.transform.rotation = this.transform.rotation;
         //bullet.transform.Rotate(0, RandomSpread(), 0, Space.World); //disabled
