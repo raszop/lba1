@@ -48,7 +48,6 @@ public class Joystick : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, I
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("shit");
         OnDrag(eventData);
     }
 

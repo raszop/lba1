@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject startWaveButton;
     public List<GameObject> spawners;
     public List<GameObject> itemSpawnPlaces;
     public List<GameObject> itemsToSpawn;
@@ -64,8 +65,14 @@ public class GameController : MonoBehaviour
         if (enemies.Length == 0)
         {
             Debug.Log("Wave ended");
+            ShowStartWaveButton();
             SpawnItemsToBuy();
         }
+    }
+
+    private void ShowStartWaveButton()
+    {
+        startWaveButton.gameObject.SetActive(true);
     }
 
     [ContextMenu("spawn items")]
