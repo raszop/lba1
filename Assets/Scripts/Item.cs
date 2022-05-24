@@ -25,7 +25,7 @@ public class Item : MonoBehaviour
                 player.Heal(healHpValue);
                 player.maxHp += additionalHealth;
                 player.damage += additionalDamage;
-                player.shootingRate += additionalShootingRate;
+                player.shootingRate += Mathf.Clamp(player.shootingRate + additionalShootingRate, 0.1f, 1);
 
                 Destroy(this.gameObject);
             }
