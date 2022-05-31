@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject startWaveButton;
     public List<GameObject> spawners;
     public List<GameObject> itemSpawnPlaces;
     public List<GameObject> itemsToSpawn;
     public List<GameObject> spawnedItems;
 
     public int wave = 1;
+
+    public int dragonRepeatRate = 4;
 
     public float spawningDelayMultiplier;
     public int baseEnemyMultiplier;
@@ -19,13 +22,22 @@ public class GameController : MonoBehaviour
 
     private float waveEndCheckTime = 2.0f;
 
+    public GameObject dragonPrefab;
+    public Vector3 dragonSpawnPosition;
+
     private void Start()
     {
         spawnedItems = new List<GameObject>();
     }
     public void StartWave()
     {
-        StartCoroutine(WaveRoutine());
+        if (wave % dragonRepeatRate == 0)
+        {
+            StartCoroutine(DragonFightRoutine());
+        } else
+        {
+            StartCoroutine(WaveRoutine());
+        }
     }
 
     private IEnumerator WaveRoutine()
@@ -52,6 +64,18 @@ public class GameController : MonoBehaviour
         StartCoroutine(CheckIfWaveEndedRoutine());
     }
 
+    private IEnumerator DragonFightRoutine()
+    {
+        yield return new WaitForEndOfFrame();
+        DespawnItemsToBuy();
+        Debug.Log("STARTING WAVE: dragon fight");
+
+        GameObject newDragon = Instantiate(dragonPrefab, dragonSpawnPosition, Quaternion.identity);
+
+        wave = wave + 1;
+        StartCoroutine(CheckIfWaveEndedRoutine());
+    }
+
     private IEnumerator CheckIfWaveEndedRoutine()
     {
         GameObject[] enemies;
@@ -64,12 +88,18 @@ public class GameController : MonoBehaviour
         if (enemies.Length == 0)
         {
             Debug.Log("Wave ended");
+            ShowStartWaveButton();
             SpawnItemsToBuy();
             if (wave > PlayerPrefs.GetInt("highscore", 0))
             {
                 PlayerPrefs.SetInt("highscore", wave);
             }
         }
+    }
+
+    private void ShowStartWaveButton()
+    {
+        startWaveButton.gameObject.SetActive(true);
     }
 
     [ContextMenu("spawn items")]

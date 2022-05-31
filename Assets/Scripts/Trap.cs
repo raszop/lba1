@@ -8,6 +8,18 @@ public class Trap : MonoBehaviour
 
     public int damage;
 
+    public float destroyTime;
+
+    private void Start()
+    {
+        Invoke(nameof(DestroySpikeTrap), destroyTime);
+    }
+
+    private void DestroySpikeTrap()
+    {
+        Destroy(this.gameObject);
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Enemy")
