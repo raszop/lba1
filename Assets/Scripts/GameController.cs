@@ -90,6 +90,10 @@ public class GameController : MonoBehaviour
             Debug.Log("Wave ended");
             ShowStartWaveButton();
             SpawnItemsToBuy();
+            if (wave > PlayerPrefs.GetInt("highscore", 0))
+            {
+                PlayerPrefs.SetInt("highscore", wave);
+            }
         }
     }
 

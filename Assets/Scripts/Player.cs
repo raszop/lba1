@@ -42,8 +42,12 @@ public class Player : MonoBehaviour
             //TODO
             gameObject.SetActive(false);
 
+            //save money
+            PlayerPrefs.SetInt("savedmoney", money/2);
+
             //reload scene
             SceneManager.LoadScene("Game_Over");
+
         }
     }
 
