@@ -16,7 +16,11 @@ public class EnemyLoot : MonoBehaviour
             int dropChance = Random.Range(0, 100);
             if(dropChance <= chanceToDrop)
             {
-                GameObject newLoot = Instantiate(lootObject, transform.position, Quaternion.identity);
+                float randomX = Random.Range(-1f, 1f);
+                float randomZ = Random.Range(-1f, 1f);
+                Vector3 randomPosition = new Vector3(randomX, 0, randomZ);
+
+                GameObject newLoot = Instantiate(lootObject, transform.position + randomPosition, Quaternion.identity);
             }
         }
     }

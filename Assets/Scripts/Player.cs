@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
+    public Text MoneyCounter;
+    
+    
     public Image playerHealthBar;
     public Image playerHealthBarHeart;
 
