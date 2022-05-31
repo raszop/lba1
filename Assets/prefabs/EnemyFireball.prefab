@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5875387896087369032}
   - component: {fileID: 5806790950036507442}
   - component: {fileID: 1073879396497970647}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: EnemyFireball
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6239355304673067368}
   m_LocalRotation: {x: -0, y: 0.9997951, z: -0, w: 0.020244906}
-  m_LocalPosition: {x: -0.9204233, y: 1.5869071, z: 4.307172}
+  m_LocalPosition: {x: 0.97, y: 1.5869071, z: 0.89}
   m_LocalScale: {x: 0.99999976, y: 1, z: 0.99999976}
   m_Children:
   - {fileID: 3436431808265882829}
@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 164416, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 451472, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
       propertyPath: m_RootOrder
@@ -212,7 +212,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1851117349960970002, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1851117349960970002, guid: 8aeb2c0224fe763499eed3ec0587162b, type: 3}
       propertyPath: m_IsActive
