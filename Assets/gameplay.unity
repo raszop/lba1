@@ -2113,10 +2113,13 @@ MonoBehaviour:
   - {fileID: 8074154340512368054, guid: f59d34fcad129fb4db3329dda266956f, type: 3}
   spawnedItems: []
   wave: 1
+  dragonRepeatRate: 4
   spawningDelayMultiplier: 0.1
   baseEnemyMultiplier: 4
   baseSpawnTime: 2
   minimumSpawnTime: 0.3
+  dragonPrefab: {fileID: 188024269815001318, guid: 8bc312f6bd823c747bc87223fdbde8bb, type: 3}
+  dragonSpawnPosition: {x: 15, y: 0, z: 25}
 --- !u!4 &1824154560
 Transform:
   m_ObjectHideFlags: 0

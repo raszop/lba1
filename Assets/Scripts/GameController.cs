@@ -12,6 +12,8 @@ public class GameController : MonoBehaviour
 
     public int wave = 1;
 
+    public int dragonRepeatRate = 4;
+
     public float spawningDelayMultiplier;
     public int baseEnemyMultiplier;
 
@@ -20,13 +22,22 @@ public class GameController : MonoBehaviour
 
     private float waveEndCheckTime = 2.0f;
 
+    public GameObject dragonPrefab;
+    public Vector3 dragonSpawnPosition;
+
     private void Start()
     {
         spawnedItems = new List<GameObject>();
     }
     public void StartWave()
     {
-        StartCoroutine(WaveRoutine());
+        if (wave % dragonRepeatRate == 0)
+        {
+            StartCoroutine(DragonFightRoutine());
+        } else
+        {
+            StartCoroutine(WaveRoutine());
+        }
     }
 
     private IEnumerator WaveRoutine()
@@ -48,6 +59,18 @@ public class GameController : MonoBehaviour
             GameObject spawner = spawners[Random.Range(0, spawners.Count)];
             spawner.GetComponent<Spawner>().SpawnRandomEnemy();
         }
+
+        wave = wave + 1;
+        StartCoroutine(CheckIfWaveEndedRoutine());
+    }
+
+    private IEnumerator DragonFightRoutine()
+    {
+        yield return new WaitForEndOfFrame();
+        DespawnItemsToBuy();
+        Debug.Log("STARTING WAVE: dragon fight");
+
+        GameObject newDragon = Instantiate(dragonPrefab, dragonSpawnPosition, Quaternion.identity);
 
         wave = wave + 1;
         StartCoroutine(CheckIfWaveEndedRoutine());
