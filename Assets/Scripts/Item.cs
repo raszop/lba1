@@ -26,8 +26,13 @@ public class Item : MonoBehaviour
                 player.maxHp += additionalHealth;
                 player.damage += additionalDamage;
                 player.shootingRate += Mathf.Clamp(player.shootingRate + additionalShootingRate, 0.1f, 1);
-
+                
+                player.money -= itemCost;
+                other.gameObject.GetComponent<Player>().MoneyCounter.text = other.gameObject.GetComponent<Player>().money.ToString();
                 Destroy(this.gameObject);
+            
+            
+            
             }
         }
     }

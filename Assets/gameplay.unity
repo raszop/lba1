@@ -1014,7 +1014,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2147483649
   m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
@@ -1260,10 +1259,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: fb6418e4069c76741a5a0fb985ea4493, type: 3}
-    m_FontSize: 0
+    m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
+    m_BestFit: 1
+    m_MinSize: 50
     m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 1
