@@ -28,6 +28,7 @@ public class GameController : MonoBehaviour
     private void Start()
     {
         spawnedItems = new List<GameObject>();
+        PlayerPrefs.SetInt("Score", 0);
     }
     public void StartWave()
     {
