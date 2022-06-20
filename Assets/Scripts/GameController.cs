@@ -93,7 +93,12 @@ public class GameController : MonoBehaviour
             if (wave > PlayerPrefs.GetInt("highscore", 0))
             {
                 PlayerPrefs.SetInt("highscore", wave);
+             
+            
             }
+            PlayerPrefs.SetInt("Score", wave);
+
+
         }
     }
 
