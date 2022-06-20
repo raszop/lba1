@@ -6,6 +6,11 @@ public class FireballController : MonoBehaviour
 {
     public int damage;
 
+    private void Start()
+    {
+        Destroy(this.gameObject, 5.0f);
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player")

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 803175407458623425}
   - component: {fileID: 4188121000970870903}
   - component: {fileID: 6286364008550922530}
+  - component: {fileID: 5150417308410290063}
   m_Layer: 7
   m_Name: Enemy_Saw_GO
   m_TagString: Enemy
@@ -118,6 +119,21 @@ MonoBehaviour:
   damage: 1
   attackDelay: 0.2
   canAttackPlayer: 0
+--- !u!114 &5150417308410290063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5677624443437178601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfc7032883c14854a8b73c16a7ebae99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootMaxMoney: 3
+  chanceToDrop: 75
+  lootObject: {fileID: 8244904778834050155, guid: 2b372e3d972d4af46ac69ed579556fc9, type: 3}
 --- !u!1001 &5677624444475628305
 PrefabInstance:
   m_ObjectHideFlags: 0
